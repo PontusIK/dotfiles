@@ -100,6 +100,9 @@
     git = {
       enable = true;
     };
+    java = {
+      enable = true;
+    };
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
