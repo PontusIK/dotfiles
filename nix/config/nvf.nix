@@ -6,8 +6,11 @@
     enable = true;
 
     settings.vim = {
+      clipboard = {
+        enable = true;
+      };
+
       lineNumberMode = "number";
-      useSystemClipboard = true;
 
       options = {
         tabstop = 2;
