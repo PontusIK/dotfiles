@@ -89,7 +89,6 @@
       brave
       tree
       wl-clipboard
-      dolphin
       wofi
       ghostty
       discord
@@ -97,12 +96,15 @@
   };
 
   programs = {
-    git = {
-      enable = true;
-    };
-    java = {
-      enable = true;
-    };
+    git.enable = true;
+    java.enable = true;
+    thunar.enable = true;
+    xfconf.enable = true;
+  };
+
+  services = {
+    gvfs.enable = true;
+    tumbler.enable = true;
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
