@@ -8,6 +8,7 @@
     settings.vim = {
       clipboard = {
         enable = true;
+        providers.xclip.enable = true;
       };
 
       lineNumberMode = "number";

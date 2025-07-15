@@ -89,7 +89,7 @@
       fastfetch
       brave
       tree
-      wofi
+      rofi
       ghostty
       discord
     ];
