@@ -19,4 +19,8 @@
   };
   services.displayManager.defaultSession = "xfce";
 
+  services.xserver.xkb = {
+    layout = "se";
+    variant = "";
+  };
 }
