@@ -6,7 +6,8 @@
       ./hardware.nix
       ./nvf.nix
       inputs.nvf.nixosModules.default
-      ./hyprland.nix
+      # ./hyprland.nix
+      ./xfce.nix
     ];
 
   # Bootloader.
@@ -88,7 +89,6 @@
       fastfetch
       brave
       tree
-      wl-clipboard
       wofi
       ghostty
       discord
@@ -98,27 +98,22 @@
   programs = {
     git.enable = true;
     java.enable = true;
-    thunar.enable = true;
-    xfconf.enable = true;
   };
-
-  services = {
-    gvfs.enable = true;
-    tumbler.enable = true;
-  };
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 30d";
+  nix = {
+    settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+      auto-optimise-store = true;
+    };
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
+    };
   };
-
-  nix.settings.auto-optimise-store = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

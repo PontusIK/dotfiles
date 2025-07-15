@@ -15,6 +15,7 @@
       };
     };
     windowManager.i3.enable = true;
+    displayManager.lightdm.enable = true;
   };
   services.displayManager.defaultSession = "xfce";
 
