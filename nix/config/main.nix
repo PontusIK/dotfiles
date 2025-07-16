@@ -7,8 +7,7 @@
       ./nvf.nix
       inputs.nvf.nixosModules.default
       #./hyprland.nix
-      #./xfce+i3.nix
-      ./xfce.nix
+      ./xfce+i3.nix
     ];
 
   # Bootloader.
