@@ -6,7 +6,8 @@
       ./hardware.nix
       ./nvf.nix
       inputs.nvf.nixosModules.default
-      # ./hyprland.nix
+      #./hyprland.nix
+      #./xfce+i3.nix
       ./xfce.nix
     ];
 
