@@ -92,6 +92,7 @@
       rofi
       ghostty
       discord
+      xclip
     ];
   };
 
