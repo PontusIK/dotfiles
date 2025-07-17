@@ -6,8 +6,7 @@
       ./hardware.nix
       ./nvf.nix
       inputs.nvf.nixosModules.default
-      #./hyprland.nix
-      ./xfce+i3.nix
+      ./budgie.nix
     ];
 
   # Bootloader.
@@ -41,19 +40,6 @@
     LC_TELEPHONE = "sv_SE.UTF-8";
     LC_TIME = "sv_SE.UTF-8";
   };
-
-# # Enable the X11 windowing system.
-# services.xserver= {
-#   enable = true;
-#   displayManager.lightdm.enable = true;
-#   desktopManager.budgie.enable = true;
-# };
-
-# # Configure keymap in X11
-# services.xserver.xkb = {
-#   layout = "se";
-#   variant = "";
-# };
 
   # Configure console keymap
   console.keyMap = "sv-latin1";
