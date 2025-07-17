@@ -9,7 +9,7 @@
       clipboard = {
         enable = true;
         providers.xclip.enable = true;
-        providers.xclip.package = pkgs.xclip;
+        registers = "unnamedplus";
       };
 
       lineNumberMode = "number";
