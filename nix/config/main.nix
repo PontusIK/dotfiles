@@ -1,13 +1,14 @@
-{ inputs, pkgs, ... }:
-
 {
-  imports =
-    [
-      ./hardware.nix
-      ./nvf.nix
-      inputs.nvf.nixosModules.default
-      ./budgie.nix
-    ];
+  inputs,
+  pkgs,
+  ...
+}: {
+  imports = [
+    ./hardware.nix
+    ./nvf.nix
+    inputs.nvf.nixosModules.default
+    ./hyprland.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -70,7 +71,7 @@
   users.users.pontus = {
     isNormalUser = true;
     description = "pontus";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       fastfetch
       brave
@@ -92,7 +93,7 @@
 
   nix = {
     settings = {
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = ["nix-command" "flakes"];
       auto-optimise-store = true;
     };
     gc = {
@@ -128,5 +129,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }

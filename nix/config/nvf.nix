@@ -1,7 +1,6 @@
-{ pkgs, ... }:
+{ ... }: 
 
 {
-  
   programs.nvf = {
     enable = true;
 
@@ -15,20 +14,26 @@
       lineNumberMode = "number";
 
       options = {
-        tabstop = 2;
-        shiftwidth = 2;
+        tabstop = 4;
+        shiftwidth = 4;
         wrap = false;
       };
 
       telescope.enable = true;
       git.enable = true;
       treesitter.context.enable = true;
-      lsp = {
+      lsp.enable = true;
+
+      diagnostics = {
         enable = true;
-        inlayHints.enable = true;
-        nvim-docs-view.enable = true;
-        trouble.enable = true;
+        config = {
+          underline = true;
+          virtual_text = true;
+          signs = true;
+        };
       };
+
+      autocomplete.blink-cmp.enable = true;
 
       languages = {
         enableTreesitter = true;
@@ -57,6 +62,8 @@
           desc = "Telescope live grep";
         }
       ];
+    
+      ui.breadcrumbs.navbuddy.setupOpts.source_buffer.scrolloff = 8;
     };
   };
 
