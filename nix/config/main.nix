@@ -80,13 +80,11 @@
       ghostty
       discord
       xclip
+      gitFull
     ];
   };
 
-  programs = {
-    git.enable = true;
-    java.enable = true;
-  };
+  programs.java.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
