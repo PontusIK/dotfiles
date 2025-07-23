@@ -1,13 +1,13 @@
+{ inputs, pkgs, ... }: 
+
 {
-  inputs,
-  pkgs,
-  ...
-}: {
+
   imports = [
     ./hardware.nix
     ./nvf.nix
     inputs.nvf.nixosModules.default
-    ./hyprland.nix
+    #./hyprland.nix
+    ./cosmic.nix
   ];
 
   # Bootloader.
