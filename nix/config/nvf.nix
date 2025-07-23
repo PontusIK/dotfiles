@@ -1,4 +1,4 @@
-{ ... }: 
+{ ... }:
 
 {
   programs.nvf = {
@@ -26,6 +26,7 @@
 
       diagnostics = {
         enable = true;
+        nvim-lint.enable = true;
         config = {
           underline = true;
           virtual_text = true;
@@ -63,7 +64,6 @@
         }
       ];
     
-      ui.breadcrumbs.navbuddy.setupOpts.source_buffer.scrolloff = 8;
     };
   };
 
