@@ -78,7 +78,6 @@
       tree
       rofi
       ghostty
-      discord
       xclip
       gitFull
     ];
