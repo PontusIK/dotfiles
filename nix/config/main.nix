@@ -80,6 +80,7 @@
       ghostty
       xclip
       gitFull
+      python314
     ];
   };
 
