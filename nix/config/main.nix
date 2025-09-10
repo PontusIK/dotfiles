@@ -5,9 +5,8 @@
   imports = [
     ./hardware.nix
     ./nvf.nix
-    inputs.nvf.nixosModules.default
-    #./hyprland.nix
     ./cosmic.nix
+    inputs.nvf.nixosModules.default
   ];
 
   # Bootloader.
