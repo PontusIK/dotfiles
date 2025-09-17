@@ -11,38 +11,34 @@
   imports = [
     # include NixOS-WSL modules
     <nixos-wsl/modules> # --impure
-    inputs.home-manager.nixosModules.default
+    ./nvf.nix
+    inputs.nvf.nixosModules.default
   ];
 
   wsl.enable = true;
   wsl.defaultUser = "nixos";
 
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users.nixos = {
-      imports = [
-        ./nvf.nix
-        inputs.nvf.homeManagerModules.default
-      ];
-      home = {
-        username = "nixos";
-        homeDirectory = "/home/nixos";
-	      stateVersion = "24.11";
-        packages = with pkgs; [
-          maven
-        ];
-      };
-      programs = {
-        git.enable = true;
-        java.enable = true;
-        fastfetch.enable = true;
-        home-manager.enable = true;
-      };
+  programs.java.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    xclip
+    gitFull
+    python314
+  ];
+
+  nixpkgs.config.allowUnfree = true;
+
+  nix = {
+    settings = {
+      experimental-features = ["nix-command" "flakes"];
+      auto-optimise-store = true;
+    };
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
     };
   };
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
