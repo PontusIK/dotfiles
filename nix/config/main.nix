@@ -75,7 +75,6 @@
       fastfetch
       brave
       tree
-      rofi
       ghostty
       xclip
       gitFull
