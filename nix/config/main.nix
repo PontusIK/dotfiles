@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: 
+{ pkgs, ... }: 
 
 {
 
@@ -6,7 +6,6 @@
     ./hardware.nix
     ./nvf.nix
     ./cosmic.nix
-    inputs.nvf.nixosModules.default
   ];
 
   # Bootloader.
