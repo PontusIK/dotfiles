@@ -22,7 +22,6 @@
   environment.systemPackages = with pkgs; [
     xclip
     gitFull
-    python314
   ];
 
   nixpkgs.config.allowUnfree = true;
