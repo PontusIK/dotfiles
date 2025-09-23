@@ -5,7 +5,7 @@ let
 in
 pkgs.mkShell {
   packages = with pkgs; [
-    python314
+    python314Full
   ];
 
   env.LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
