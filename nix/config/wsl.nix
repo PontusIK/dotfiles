@@ -7,7 +7,12 @@
 
 { pkgs, ... }:
 
-{
+let
+  py-devenv = pkgs.writeShellScriptBin "py-devenv" ''
+    cd /mnt/c/Users/Pontus/Project/python
+    nix develop ~/dotfiles/nix#python
+  '';
+in {
   imports = [
     # include NixOS-WSL modules
     <nixos-wsl/modules> # --impure
@@ -17,11 +22,10 @@
   wsl.enable = true;
   wsl.defaultUser = "nixos";
 
-  programs.java.enable = true;
-
   environment.systemPackages = with pkgs; [
     xclip
     gitFull
+    py-devenv
   ];
 
   nixpkgs.config.allowUnfree = true;
