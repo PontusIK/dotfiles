@@ -46,7 +46,10 @@
         nix.enable = true;
         java.enable = true;
         clang.enable = true;
-        python.enable = true;
+        python = {
+          enable = true;
+          lsp.server = "pyright";
+        };
         markdown = {
           enable = true;
           extensions.render-markdown-nvim.enable = true;
