@@ -30,6 +30,7 @@ in {
   environment.systemPackages = with pkgs; [
     xclip
     gitFull
+    tree
     py-devenv
     java-devenv
   ];
