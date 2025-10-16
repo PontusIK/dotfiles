@@ -12,6 +12,11 @@ let
     cd /mnt/c/Users/Pontus/Project/python
     nix develop ~/dotfiles/nix#python
   '';
+
+  java-devenv = pkgs.writeShellScriptBin "java-devenv" ''
+    cd /mnt/c/Users/Pontus/Project/java
+    nix develop ~/dotfiles/nix#java
+  '';
 in {
   imports = [
     # include NixOS-WSL modules
@@ -26,6 +31,7 @@ in {
     xclip
     gitFull
     py-devenv
+    java-devenv
   ];
 
   nixpkgs.config.allowUnfree = true;

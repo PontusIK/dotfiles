@@ -30,6 +30,8 @@
     devShells.${system} = {
 
       python = import ./config/python.nix { inherit inputs system; };
+
+      java = import ./config/java.nix { inherit inputs system; };
     };
   };
 }
