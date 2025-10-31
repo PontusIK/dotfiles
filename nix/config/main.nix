@@ -26,10 +26,7 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager = {
-    enable = true;
-    wifi.powersave = false;
-  };
+  networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Stockholm";
@@ -86,11 +83,8 @@
       ghostty
       xclip
       gitFull
-      python314
     ];
   };
-
-  programs.java.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
